@@ -11,6 +11,7 @@
             $File = $Path . date('Ymdhm') . "_" . $_FILES["qqfile"]["name"];
             if (move_uploaded_file($_FILES["qqfile"]["tmp_name"], $File)) {
                 echo true;
+				
             } else {
             }
         }
