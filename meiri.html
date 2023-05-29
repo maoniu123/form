@@ -52,7 +52,7 @@
 	
 	<div class="container">
      <h1>每日文集</h1>
-    <button class="btn" id="copy-btn"  onclick="copyToClipboard()">复制</button>
+    <button class="btn" id="copy-btn" >复制</button>
     <div class="hitokoto" id="hitokoto">加载...</div> 
   </div>
   <script>
@@ -71,14 +71,18 @@
             $('#hitokoto').append('<br><br>' + content + author +source);
           });
         }
+		
+$("#copy-btn").click(function() {
+  var text = $("#hitokoto").text();
+  var tempInput = $("<input>");
+  $("body").append(tempInput);
+  tempInput.val(text).select();
+  document.execCommand("copy");
+  tempInput.remove();showAlert("复制成功!");
+}); 
     });
 
-    function copyToClipboard() {
-      var text = $('#hitokoto').text();
-      navigator.clipboard.writeText(text);
-   
-	  showAlert("复制成功!");
-    }
+ 
 	
 	function showAlert(message) {
 			const alertContainer = document.createElement("div");
