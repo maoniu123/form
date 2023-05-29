@@ -4,93 +4,14 @@
 	<meta charset="UTF-8">
 	<title>每日名言</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<style type="text/css">
-		body {
-			font-family: Arial, sans-serif;
-			font-size: 16px;
-			line-height: 1.5;
-			margin: 0;
-			padding: 0;
-		}
-		.container {
-			max-width: 100%;
-			margin: 0 auto;
-			padding: 10px;
-		}
-		img {
-			max-width: 100%;
-			height: auto;
-		}
-		
-		.alert {
-			background-color: #007bff;
-			border-radius: 5px;
-			color: #fff;
-			font-size: 14px;
-			margin-bottom: 20px;
-			padding: 10px;
-			position: fixed;
-			right: 20px;
-			top: 20px;
-			z-index: 9999;
-		}
-		button {
-			background-color: #007bff;
-			border: none;
-			border-radius: 5px;
-			color: #fff;
-			cursor: pointer;
-			font-size: 16px;
-			padding: 10px 20px;
-		}
-
-	</style>
+ <meta http-equiv="refresh" content="0; url=https://yx.xiyou.sbs/">
+	 
 </head>
 <body>
  
 	
 	<div class="container">
-     <h1>每日文集</h1>
-    <button class="btn" id="copy-btn"  onclick="copyToClipboard()">复制</button>
-    <div class="hitokoto" id="hitokoto">加载...</div> 
-  </div>
-  <script>
-    $(document).ready(function() {
-        // 请求三次并显示
-		
-		var type=['a','b','c','d','e','f','g','h','i','j','k','l'];
-		$('#hitokoto').empty();
-        for (var i = 0; i < 4; i++) {
-		const randomIndex = Math.floor(Math.random() * type.length);
-		console.log(randomIndex);
-          $.get('https://v1.hitokoto.cn/?c='+type[randomIndex]+'&min_length=30&max_length=300', function(data) {
-            var content = data.hitokoto;
-            var author = data.from_who ? ',' + data.from_who : "";
-            var source = data.from ? '《' + data.from + '》' : '';
-            $('#hitokoto').append('<br><br>' + content + author +source);
-          });
-        }
-    });
-
-    function copyToClipboard() {
-      var text = $('#hitokoto').text();
-      navigator.clipboard.writeText(text);
-   
-	  showAlert("复制成功!");
-    }
-	
-	function showAlert(message) {
-			const alertContainer = document.createElement("div");
-			alertContainer.classList.add("alert");
-			alertContainer.innerText = message;
-
-			document.body.appendChild(alertContainer);
-
-			setTimeout(() => {
-				document.body.removeChild(alertContainer);
-			}, 2000);
-		}
-  </script>
+     <h1>加载中……</h1> 
+		</div>
 </body>
 </html>
